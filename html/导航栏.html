@@ -208,7 +208,7 @@
 						注册了账号后，您可以进一步查询我们的燃气购销差管理系统。该系统为您提供了丰富的功能和工具，以帮助您更好地了解和管理燃气购销差。通过该系统，您可以查看历史数据和趋势，进行数据分析和建模，并使用机器学习算法预测未来的购销差趋势。此外，该系统还提供了可视化分析工具，帮助您更好地理解数据，并支持自定义报告和数据导出。我们的燃气购销差管理系统是一个完整、可靠和易于使用的平台，旨在帮助您优化您的燃气采购和销售策略，并最大化您的盈利能力
 					</p>
 					<button id="login-btn" class="btn btn-primary btn-lg">登录</button>
-					<button id="login-supervisor-btn" class="btn btn-success btn-lg">管理员登录</button>
+					<button id="login-supervisor-btn" class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#supervisorLoginModal">管理员登录</button>
 				</div>
 				<img src="{%static 'imgg/showcase.svg'%}" alt="showcase" class="w-50 d-none d-md-block"><!--width-50%--><!--右半部分的图片--><!--默认图片是不显示的，但如果显示大于medium就显示为block级-->
 			</div>
@@ -240,6 +240,36 @@
 			</div>
 		</div>
 	</div>
+
+		<div class="modal fade" id="supervisorLoginModal" tabindex="-1" aria-labelledby="supervisorLoginModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="supervisorLoginModalLabel">管理员登录</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<form action="/supervisorlogin/" method="post">
+						{% csrf_token %}
+						<div class="form-group">
+							<label for="username">用户名:</label>
+							<input required="" class="form-control" name="username1"  type="text">
+						</div>
+						<div class="form-group">
+							<label for="password">密码:</label>
+							<input required="" class="form-control" name="password1"  type="password">
+						</div>
+						<input type="submit" class="btn" value="登录">
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
 
 
 
